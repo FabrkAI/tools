@@ -12,7 +12,9 @@ import { z } from "zod";
 import { JSONSchema } from "openai/lib/jsonschema";
 
 const scrapeUrl = z.object({
-  url: z.string(),
+  params: z.object({
+    url: z.string(),
+  }),
 });
 
 function cleanAndDeduplicateText(textArray?: string[]): string {

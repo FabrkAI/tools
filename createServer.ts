@@ -2,6 +2,7 @@ import { urlencoded } from "body-parser";
 import cors from "cors";
 import express, { Express, Request, Response } from "express";
 import toolRoutes from "./api/tool/tool.route";
+import chatRoutes from "./api/chat/chat.route";
 
 export function createApp() {
   const app: Express = express();
@@ -14,6 +15,7 @@ export function createApp() {
   app.use(urlencoded({ extended: false }));
 
   app.use("/tool", toolRoutes);
+  app.use("/chat", chatRoutes);
 
   app.use("/", (req: Request, res: Response) => {
     res.send(
