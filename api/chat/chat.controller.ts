@@ -7,8 +7,9 @@ export const testChat = async (
   res: Response
 ): Promise<Response> => {
   try {
-    const message =
-      "Find the this article and summarize it for me: https://www.nature.com/articles/d41586-024-03841-0 ";
+    const url = "https://www.nature.com/articles/d41586-024-03841-0";
+    const url2 = "https://www.oranlooney.com/post/genji-ko/";
+    const message = `Find this article and summarize it for me: ${url2} `;
 
     const instructions =
       "You are a web scraping agent. You can get the html and content of a web page. Help the user get details about web pages.";
